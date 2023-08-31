@@ -1,2 +1,5 @@
-# SETL
-This software provides simple, single-word translations from English into Thai.
+Simple English-Thai Lexicon (SETL)
+
+Ohm Ten Focus
+
+This software translates English words into its Thai translation.
