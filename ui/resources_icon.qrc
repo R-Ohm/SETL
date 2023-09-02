@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/bees.png</file>
+    <file>icons/leaf.png</file>
+    <file>icons/translator.png</file>
+    <file>icons/Explore.svg</file>
+    <file>icons/Bees.svg</file>
+    <file>icons/Leaf.svg</file>
+    <file>icons/History.svg</file>
+    <file>icons/Favourite.svg</file>
+    <file>icons/Vocabulary.svg</file>
+    <file>icons/Translator.svg</file>
+  </qresource>
+</RCC>
