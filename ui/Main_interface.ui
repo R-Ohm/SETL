@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>637</width>
-    <height>504</height>
+    <width>786</width>
+    <height>512</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -119,7 +119,7 @@ border-bottom-right-radius: 20px;</string>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>500</height>
+              <height>16777215</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -159,7 +159,7 @@ border-bottom-right-radius: 20px;</string>
               <string>History</string>
              </property>
              <property name="icon">
-              <iconset resource="resources.qrc">
+              <iconset resource="../resources_icon.qrc">
                <normaloff>:/icons/icons/translator.png</normaloff>:/icons/icons/translator.png</iconset>
              </property>
              <property name="checkable">
@@ -204,7 +204,7 @@ justify-content: left;</string>
               <string>Translator</string>
              </property>
              <property name="icon">
-              <iconset resource="resources.qrc">
+              <iconset resource="../resources_icon.qrc">
                <normaloff>:/icons/icons/translator.png</normaloff>:/icons/icons/translator.png</iconset>
              </property>
              <property name="checkable">
@@ -264,7 +264,7 @@ justify-content: left;</string>
               <string>Vocabulary</string>
              </property>
              <property name="icon">
-              <iconset resource="resources.qrc">
+              <iconset resource="../resources_icon.qrc">
                <normaloff>:/icons/icons/translator.png</normaloff>:/icons/icons/translator.png</iconset>
              </property>
              <property name="checkable">
@@ -308,7 +308,7 @@ justify-content: left;</string>
               <string>Favourite</string>
              </property>
              <property name="icon">
-              <iconset resource="resources.qrc">
+              <iconset resource="../resources_icon.qrc">
                <normaloff>:/icons/icons/translator.png</normaloff>:/icons/icons/translator.png</iconset>
              </property>
              <property name="checkable">
@@ -384,7 +384,7 @@ justify-content: left;</string>
   </widget>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources_icon.qrc"/>
  </resources>
  <connections/>
 </ui>
