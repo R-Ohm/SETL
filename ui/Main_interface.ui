@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>786</width>
-    <height>512</height>
+    <width>500</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -320,19 +320,25 @@ justify-content: left;</string>
             </widget>
            </widget>
           </item>
-          <item>
+          <item alignment="Qt::AlignBottom">
            <widget class="QWidget" name="widget_3" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>250</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>140</height>
+              <height>16777215</height>
              </size>
             </property>
             <widget class="QLabel" name="label_2">
              <property name="geometry">
               <rect>
                <x>10</x>
-               <y>40</y>
+               <y>150</y>
                <width>151</width>
                <height>101</height>
               </rect>
@@ -348,20 +354,19 @@ justify-content: left;</string>
              <property name="geometry">
               <rect>
                <x>-20</x>
-               <y>-40</y>
+               <y>60</y>
                <width>201</width>
                <height>171</height>
               </rect>
              </property>
              <property name="styleSheet">
-              <string notr="true">image: url(:/icons/icons/bees.png);</string>
+              <string notr="true">image: url(:/icons/icons/bees.png);
+background-color: transparent;</string>
              </property>
              <property name="text">
               <string/>
              </property>
             </widget>
-            <zorder>label_3</zorder>
-            <zorder>label_2</zorder>
            </widget>
           </item>
          </layout>
