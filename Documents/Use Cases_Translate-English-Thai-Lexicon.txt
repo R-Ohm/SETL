@@ -1,0 +1,33 @@
+﻿Name: translate words
+Actors: Who need to use the translation
+Goal: Translate the vocabulary from English to Thai
+Preconditions: None
+
+
+Deliverables:
+Must store English and Thai lexicon
+Must be allow user to be able to search for words and their translation
+Must allow user to add words
+Must allow user to delete words
+Must translate from English to Thai
+
+
+Constraints:
+API errors
+Must be the known words
+Must be single words
+
+
+
+
+Main Success scenario:
+1.User type the word that they need to translate to English
+2.The system analyzes what is the meaning of the word that user input.
+3.The systems shows all of the synonym meaning of the word that it can likely to be.
+4.The user can select the appropriate meaning word they wanted
+
+
+Extension:
+2a. If a word is unknown, ask the user to add a new word.
+4a. The meaning of the words is wrong. The user can modify it.
+5. Allow the user to delete words.
