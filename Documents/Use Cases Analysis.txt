@@ -33,5 +33,6 @@ Extension:
 5. Allow the user to delete words.
 
 
-Here is the link to the Diagram
-https://app.diagrams.net/#G1El-qgLLSY4smy0ZmTVbpYN6VE80H6qkV
+Here is the link to the diagram:
+https://drive.google.com/file/d/1El-qgLLSY4smy0ZmTVbpYN6VE80H6qkV/view?usp=sharing
+
