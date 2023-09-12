@@ -32,7 +32,3 @@ Extension:
 4a. The meaning of the words is wrong. The user can modify it.
 5. Allow the user to delete words.
 
-
-Here is the link to the diagram:
-https://drive.google.com/file/d/1El-qgLLSY4smy0ZmTVbpYN6VE80H6qkV/view?usp=sharing
-
