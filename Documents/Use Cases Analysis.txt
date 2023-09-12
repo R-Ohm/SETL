@@ -31,3 +31,7 @@ Extension:
 2a. If a word is unknown, ask the user to add a new word.
 4a. The meaning of the words is wrong. The user can modify it.
 5. Allow the user to delete words.
+
+
+Here is the link to the Diagram
+https://app.diagrams.net/#G1El-qgLLSY4smy0ZmTVbpYN6VE80H6qkV
