@@ -1,3 +1,6 @@
+
+Team A edited here
+
 Simple English-Thai Lexicon (SETL)
 
 Ohm Ten Focus Minnie
