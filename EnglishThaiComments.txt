@@ -1,0 +1,9 @@
+﻿English-Thai Lexicon
+
+
+2023-09-14 – Only one use case narrative, no diagram. Seems like you are confusing requirements and use cases. You should NOT be writing code at this stage, or be prepared to throw it away.
+2023-09-22 – Continued work on use case document, good.
+2023-09-28 - No upload of architecture design. No repository activity this week. No headers on code.
+2023-10-04 - You updated your architecture design, which is good. BUT you did not commit any coding standards which was required by the lab last week.
+
+
