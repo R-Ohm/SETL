@@ -7,3 +7,4 @@ Ohm Ten Focus Minnie
 
 This software translates English words into its Thai translation.
 
+New last line
