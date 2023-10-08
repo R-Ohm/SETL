@@ -1,4 +1,4 @@
-
+Team A edited here
 Team B edited here
 
 Simple English-Thai Lexicon (SETL)
