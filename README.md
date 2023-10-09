@@ -8,3 +8,5 @@ Ohm Ten Focus Minnie
 This software translates English words into its Thai translation.
 
 New last line
+
+Step 11 content Team A
