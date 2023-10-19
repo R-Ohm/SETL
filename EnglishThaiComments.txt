@@ -6,8 +6,22 @@
 2023-09-28 - No upload of architecture design. No repository activity this week. No headers on code.
 2023-10-04 - You updated your architecture design, which is good. BUT you did not commit any coding standards which was required by the lab last week.
 
+
+
 2023-10-12 - You have uploaded .DS-Store to your repository in several directories. This is a derived file that does not belong in the repository. Suggests to me that you were using a GUI for the lab exercise...
 
 Your lab report mostly seems copied from my assignment instruction introduction...
 
 No other code development over the past week.
+
+2023-10-19: Your test plan should be called “FunctionalTestPlan” or something similar. NOT “Lab7”. Furthermore, it would be better to store the spreadsheet, which you can then use to organize testing.
+
+Your functional test plan needs to be more specific and needs many more test cases. For instance, “Move to every page” should have a separate test case for EACH page. “Input English Word” should SPECIFY what word. And so on. 
+
+For the results... how can we tell that something has been stored in the DB?
+
+You also need test cases for error situations.
+
+Memory, Cache etc are not things that can be tested in a functional test plan.
+
+Other than the test plan, it looks like you have not done any work at all on the app.
