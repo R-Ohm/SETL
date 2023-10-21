@@ -1,0 +1,21 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/love.png</file>
+    <file>icons/history.png</file>
+    <file>icons/star.png</file>
+    <file>icons/Vocabulary.png</file>
+    <file>icons/Translate_logo.png</file>
+    <file>icons/bees.png</file>
+    <file>icons/Bees.svg</file>
+    <file>icons/Explore.svg</file>
+    <file>icons/Favourite.svg</file>
+    <file>icons/History.svg</file>
+    <file>icons/leaf.png</file>
+    <file>icons/Leaf.svg</file>
+    <file>icons/translator.png</file>
+    <file>icons/Translator.svg</file>
+    <file>icons/Vocabulary.svg</file>
+    <file>icons/Image.png</file>
+    <file>icons/Image-1.png</file>
+  </qresource>
+</RCC>
