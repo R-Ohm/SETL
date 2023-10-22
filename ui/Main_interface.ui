@@ -136,8 +136,15 @@ border-bottom-right-radius: 20px;
                </property>
                <property name="font">
                 <font>
+                 <family>Poppins</family>
                  <pointsize>25</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
                 </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 25pt &quot;Poppins&quot;;</string>
                </property>
                <property name="text">
                 <string>Explore</string>
@@ -169,6 +176,7 @@ border-bottom-right-radius: 20px;
                </property>
                <property name="styleSheet">
                 <string notr="true">#widget QPushButton {
+	font: 17pt &quot;Poppins&quot;;
 	display: flex;
 	text-align: left;
 	padding: 0px 0px 0px 20px;
@@ -216,14 +224,21 @@ border-bottom-right-radius: 20px;
                   </property>
                   <property name="font">
                    <font>
+                    <family>Poppins</family>
                     <pointsize>17</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
                    </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string>  Translate</string>
+                   <string>Translate</string>
                   </property>
                   <property name="icon">
                    <iconset resource="../static/resources.qrc">
@@ -234,6 +249,9 @@ border-bottom-right-radius: 20px;
                     <width>40</width>
                     <height>40</height>
                    </size>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
                   </property>
                  </widget>
                 </item>
@@ -247,14 +265,21 @@ border-bottom-right-radius: 20px;
                   </property>
                   <property name="font">
                    <font>
+                    <family>Poppins</family>
                     <pointsize>17</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
                    </font>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string>  Vocabulary</string>
+                   <string>Vocabulary</string>
                   </property>
                   <property name="icon">
                    <iconset resource="../static/resources.qrc">
@@ -265,6 +290,9 @@ border-bottom-right-radius: 20px;
                     <width>40</width>
                     <height>40</height>
                    </size>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
                   </property>
                  </widget>
                 </item>
@@ -278,11 +306,18 @@ border-bottom-right-radius: 20px;
                   </property>
                   <property name="font">
                    <font>
+                    <family>Poppins</family>
                     <pointsize>17</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
                    </font>
                   </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
                   <property name="text">
-                   <string>  History</string>
+                   <string>History</string>
                   </property>
                   <property name="icon">
                    <iconset resource="../static/resources.qrc">
@@ -293,6 +328,9 @@ border-bottom-right-radius: 20px;
                     <width>40</width>
                     <height>40</height>
                    </size>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
                   </property>
                  </widget>
                 </item>
@@ -306,11 +344,18 @@ border-bottom-right-radius: 20px;
                   </property>
                   <property name="font">
                    <font>
+                    <family>Poppins</family>
                     <pointsize>17</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
                    </font>
                   </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
                   <property name="text">
-                   <string>  Favourite</string>
+                   <string>Favourite</string>
                   </property>
                   <property name="icon">
                    <iconset resource="../static/resources.qrc">
@@ -321,6 +366,9 @@ border-bottom-right-radius: 20px;
                     <width>40</width>
                     <height>40</height>
                    </size>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
                   </property>
                  </widget>
                 </item>
@@ -401,15 +449,78 @@ background-color: transparent;</string>
            </widget>
           </item>
          </layout>
-         <zorder>widget_2</zorder>
-         <zorder>widget_4</zorder>
         </widget>
        </item>
       </layout>
      </widget>
     </item>
     <item>
-     <widget class="QWidget" name="widget_5" native="true"/>
+     <widget class="QWidget" name="widget_5" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="styleSheet">
+          <string notr="true">#tabWidget
+{
+	background-color: #FFF9F1;
+}
+
+QTabBar::close-button
+{
+	margin-left: 3px;
+}
+
+QTabBar::close:-button:hover
+{
+}
+
+QTabWidget::pane {
+                border-top: 2px solid #FFF9F1;
+                background-color: #FFF9F1;
+                border-radius: 10px;
+}
+
+QTabBar::tab {
+                background-color: #FFF6E0;
+                color: #333333;
+                border: 2px solid #FBDA8A;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                min-width: 8ex;
+                padding: 5px;
+			 margin-right: 10px;
+            }
+
+QTabBar::tab:selected {
+                background-color: #FBDA8A;
+                color: #00000;
+            }</string>
+         </property>
+         <property name="tabPosition">
+          <enum>QTabWidget::North</enum>
+         </property>
+         <property name="tabShape">
+          <enum>QTabWidget::Rounded</enum>
+         </property>
+         <property name="currentIndex">
+          <number>-1</number>
+         </property>
+         <property name="tabsClosable">
+          <bool>false</bool>
+         </property>
+         <property name="movable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </item>
    </layout>
   </widget>
