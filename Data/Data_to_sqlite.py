@@ -1,9 +1,9 @@
 import sys
 import sqlite3
 from imp import reload
-from yaitron_reader import YaitronReader
+from yaitron_library import YaitronReader
 
-reload(sys)        
+reload(sys)
        
 
 reader = YaitronReader("../data/English-Thai vocab.xml")
@@ -60,3 +60,5 @@ for entry in reader.read():
   entry_id += 1
   conn.commit()
   # print entry_id
+
+print("finished converting to sqlite")
