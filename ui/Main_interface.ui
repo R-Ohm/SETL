@@ -193,6 +193,7 @@ border-bottom-right-radius: 20px;
 #widget QPushButton:checked {
 	background-color: #FFF6E0;
 }
+
 </string>
                </property>
                <property name="frameShape">
@@ -457,6 +458,9 @@ background-color: transparent;</string>
     <item>
      <widget class="QWidget" name="widget_5" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
        <property name="topMargin">
         <number>0</number>
        </property>

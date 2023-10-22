@@ -9,6 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QColor, QPainter, QBrush
+from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect
 
 
 class Ui_MainWindow(object):
@@ -29,6 +31,11 @@ class Ui_MainWindow(object):
 "border-bottom-right-radius: 20px;\n"
 "")
         self.widget.setObjectName("widget")
+        shadow = QGraphicsDropShadowEffect()
+        shadow.setBlurRadius(100)
+        shadow.setColor(QColor(0, 0, 0, 140))
+        shadow.setOffset(0, 0)
+        self.widget.setGraphicsEffect(shadow)
         self.verticalLayout = QtWidgets.QVBoxLayout(self.widget)
         self.verticalLayout.setContentsMargins(0, -1, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -203,6 +210,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setContentsMargins(-1, 0, -1, 0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.tabWidget = QtWidgets.QTabWidget(self.widget_5)
+        self.tabWidget.tabBar().setVisible(False)
         self.tabWidget.setStyleSheet("#tabWidget\n"
 "{\n"
 "    background-color: #FFF9F1;\n"
