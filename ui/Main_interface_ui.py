@@ -11,13 +11,15 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QColor, QPainter, QBrush
 from PyQt5.QtWidgets import QFrame, QGraphicsDropShadowEffect
+from PyQt5.QtSql import QSqlDatabase, QSqlQuery
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1213, 901)
+        MainWindow.resize(1300, 1000)
         MainWindow.setMinimumSize(QtCore.QSize(500, 500))
+        MainWindow.setMaximumSize(QtCore.QSize(1500, 1500))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -257,6 +259,15 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(-1)
+        
+        #connect to database
+        db = QSqlDatabase.addDatabase("QSQLITE")
+        db.setDatabaseName("English_Thai_vocab.sqlite")
+        if not db.open():
+                print("Error opening database")
+                return
+        else:
+                print("Database opened successfully")
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
