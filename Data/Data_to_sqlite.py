@@ -1,13 +1,13 @@
 import sys
 import sqlite3
 from imp import reload
-from yaitron_library import YaitronReader
+from yaitron_lib import YaitronReader
 
 reload(sys)
        
 
-reader = YaitronReader("../data/English-Thai vocab.xml")
-conn = sqlite3.connect("English Thai vocab.sqlite")
+reader = YaitronReader("../data/English-Thai-vocab.xml")
+conn = sqlite3.connect("English_Thai_vocab.sqlite")
 
 c = conn.cursor()
 
