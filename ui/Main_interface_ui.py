@@ -259,16 +259,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(-1)
-        
-        #connect to database
-        db = QSqlDatabase.addDatabase("QSQLITE")
-        db.setDatabaseName("English_Thai_vocab.sqlite")
-        if not db.open():
-                print("Error opening database")
-                return
-        else:
-                print("Database opened successfully")
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -278,4 +271,5 @@ class Ui_MainWindow(object):
         self.pushButton_3.setText(_translate("MainWindow", "Vocabulary"))
         self.pushButton_2.setText(_translate("MainWindow", "History"))
         self.pushButton.setText(_translate("MainWindow", "Favourite"))
+
 from static import resources_rc
