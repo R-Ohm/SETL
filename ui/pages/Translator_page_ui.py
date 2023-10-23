@@ -9,6 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QHBoxLayout, QAbstractItemView
+
 
 
 class Ui_Form(object):
@@ -31,7 +33,7 @@ class Ui_Form(object):
 "    border-radius: 20px;\n"
 "    background-color: rgb(255, 255, 255);\n"
 "    alternate-background-color: #f4f4f4;\n"
-"    padding: 10px;\n"
+"    padding: 20px;\n"
 "}")
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setContentsMargins(25, 15, 25, -1)
@@ -98,6 +100,11 @@ class Ui_Form(object):
         self.listWidget.setSizePolicy(sizePolicy)
         self.listWidget.setMinimumSize(QtCore.QSize(0, 0))
         self.listWidget.setMaximumSize(QtCore.QSize(500, 5000))
+        font = QtGui.QFont()
+        font.setFamily("Poppins")
+        font.setPointSize(20)
+        self.listWidget.setFont(font)
+        self.listWidget.setSelectionMode(QAbstractItemView.NoSelection)
         self.listWidget.setObjectName("listWidget")
         self.horizontalLayout.addWidget(self.listWidget)
         self.verticalLayout.addWidget(self.widget)
