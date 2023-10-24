@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/love_btn.png</file>
+    <file>icons/add button.png</file>
     <file>icons/love.png</file>
     <file>icons/history.png</file>
     <file>icons/star.png</file>

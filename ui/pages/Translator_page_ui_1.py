@@ -9,8 +9,6 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QHBoxLayout, QAbstractItemView
-
 
 
 class Ui_Form(object):
@@ -33,17 +31,17 @@ class Ui_Form(object):
 "    border-radius: 20px;\n"
 "    background-color: rgb(255, 255, 255);\n"
 "    alternate-background-color: #f4f4f4;\n"
-"    padding: 20px;\n"
+"    padding: 10px;\n"
 "}")
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
-        self.verticalLayout.setContentsMargins(25, 40, 25, -1)
+        self.verticalLayout.setContentsMargins(25, 15, 25, -1)
         self.verticalLayout.setObjectName("verticalLayout")
         self.label = QtWidgets.QLabel(Form)
         self.label.setMinimumSize(QtCore.QSize(0, 10))
         self.label.setMaximumSize(QtCore.QSize(16777215, 16777215))
         font = QtGui.QFont()
         font.setFamily("Poppins")
-        font.setPointSize(22)
+        font.setPointSize(20)
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label.setObjectName("label")
@@ -87,6 +85,8 @@ class Ui_Form(object):
         font.setFamily("Poppins")
         font.setPointSize(20)
         self.lineEdit.setFont(font)
+        self.lineEdit.setText("")
+        self.lineEdit.setFrame(True)
         self.lineEdit.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.lineEdit.setObjectName("lineEdit")
         self.horizontalLayout.addWidget(self.lineEdit)
@@ -101,10 +101,10 @@ class Ui_Form(object):
         self.listWidget.setMinimumSize(QtCore.QSize(0, 0))
         self.listWidget.setMaximumSize(QtCore.QSize(500, 5000))
         font = QtGui.QFont()
-        font.setFamily("Poppins")
-        font.setPointSize(20)
+        font.setKerning(True)
         self.listWidget.setFont(font)
-        self.listWidget.setSelectionMode(QAbstractItemView.NoSelection)
+        self.listWidget.setFocusPolicy(QtCore.Qt.WheelFocus)
+        self.listWidget.setProperty("showDropIndicator", True)
         self.listWidget.setObjectName("listWidget")
         self.horizontalLayout.addWidget(self.listWidget)
         self.verticalLayout.addWidget(self.widget)
@@ -116,31 +116,32 @@ class Ui_Form(object):
         self.widget_2.setSizePolicy(sizePolicy)
         self.widget_2.setMinimumSize(QtCore.QSize(0, 150))
         self.widget_2.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.widget_2.setStyleSheet("QPushButton {border-radius: 24px; border: None;}\n"
+"")
         self.widget_2.setObjectName("widget_2")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.widget_2)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.widget_2)
         self.pushButton_3.setEnabled(True)
         font = QtGui.QFont()
-        font.setPointSize(12)
+        font.setPointSize(10)
         font.setKerning(True)
         self.pushButton_3.setFont(font)
         self.pushButton_3.setStyleSheet("QPushButton {border-radius: 24px; border: None;}")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/icons/add button.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_3.setIcon(icon)
-        self.pushButton_3.setIconSize(QtCore.QSize(70, 70))
+        self.pushButton_3.setIconSize(QtCore.QSize(40, 40))
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout_2.addWidget(self.pushButton_3)
         self.pushButton = QtWidgets.QPushButton(self.widget_2)
         font = QtGui.QFont()
-        font.setPointSize(12)
+        font.setPointSize(10)
         self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("QPushButton {border-radius: 24px; border: None;}")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/icons/icons/love_btn.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton.setIcon(icon1)
-        self.pushButton.setIconSize(QtCore.QSize(70, 70))
+        self.pushButton.setIconSize(QtCore.QSize(40, 40))
         self.pushButton.setObjectName("pushButton")
         self.horizontalLayout_2.addWidget(self.pushButton)
         self.verticalLayout.addWidget(self.widget_2)
@@ -154,6 +155,6 @@ class Ui_Form(object):
         self.label.setText(_translate("Form", "Translate"))
         self.label_2.setText(_translate("Form", "English"))
         self.label_3.setText(_translate("Form", "Thai"))
-        self.pushButton_3.setText(_translate("Form", "  Add New Vocab"))
-        self.pushButton.setText(_translate("Form", "  Favourite"))
-from static import resources_rc
+        self.pushButton_3.setText(_translate("Form", "Add New Vocab"))
+        self.pushButton.setText(_translate("Form", "Favourite"))
+import resources_rc

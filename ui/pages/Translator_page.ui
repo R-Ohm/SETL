@@ -158,6 +158,12 @@
           <pointsize>20</pointsize>
          </font>
         </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
         </property>
@@ -199,6 +205,17 @@
           <height>5000</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::WheelFocus</enum>
+        </property>
+        <property name="showDropIndicator" stdset="0">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
      </layout>
@@ -215,7 +232,7 @@
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>200</height>
+       <height>150</height>
       </size>
      </property>
      <property name="maximumSize">
@@ -224,21 +241,59 @@
        <height>16777215</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {border-radius: 24px; border: None;}
+</string>
+     </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QListWidget" name="listWidget_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {border-radius: 24px; border: None;}</string>
+        </property>
+        <property name="text">
+         <string>Add New Vocab</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../static/resources.qrc">
+          <normaloff>:/icons/icons/add button.png</normaloff>:/icons/icons/add button.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QScrollBar" name="verticalScrollBar">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
+       <widget class="QPushButton" name="pushButton">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Favourite</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../static/resources.qrc">
+          <normaloff>:/icons/icons/love_btn.png</normaloff>:/icons/icons/love_btn.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
         </property>
        </widget>
       </item>
@@ -247,6 +302,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../static/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
