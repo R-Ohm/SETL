@@ -7,7 +7,7 @@ reload(sys)
        
 
 reader = YaitronReader("../data/English-Thai-vocab.xml")
-conn = sqlite3.connect("English_Thai_vocab.sqlite")
+conn = sqlite3.connect("test.sqlite")
 
 c = conn.cursor()
 
