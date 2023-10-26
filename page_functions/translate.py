@@ -16,6 +16,8 @@ class Translate(QWidget):
         
         # Set the selection mode of the QListWidget to NoSelection
         self.ui.listWidget.setSelectionMode(QAbstractItemView.NoSelection)
+        self.ui.pushButton.clicked.connect(self.add_word_to_favourites)
+        self.ui.pushButton_3.clicked.connect(self.add_word_to_database_window)
 
         # Connect to the SQLite database
         db = QSqlDatabase.addDatabase("QSQLITE")
@@ -114,7 +116,11 @@ class Translate(QWidget):
         thai_definition_edit = QLineEdit()
 
         #auto input English text after click button
-        english_word_edit.setText(word)
+        # english_word_edit.setText(word)
+        if isinstance(word, str):
+            english_word_edit.setText(word)
+        else:
+             english_word_edit.setText("")
 
         #create explaination text
         english_word_label = QLabel("English Word:")
@@ -185,6 +191,51 @@ class Translate(QWidget):
 
         # Close the dialog
         dialog.accept()
+    
+    def add_word_to_favourites(self):
+            
+        print("add_word_to_favourites already!")
+        english_word = self.ui.lineEdit.text()
+        # print(english_word)
+
+        if not english_word:
+            self.ui.listWidget.clear()
+            QMessageBox.information(self.ui.widget, "Error", "Please enter a word")
+            return
+
+        headword = None
+
+        #create a SqlQuery to excute the database
+        query = QSqlQuery()
+
+        #execute a SQL query to retrieve data from the database
+        query.prepare("SELECT entry.headword, translation.body, translation.entry_id FROM translation JOIN entry ON translation.entry_id = entry._id WHERE translation.body = :word")
+        query.bindValue(":word", f"{english_word}")
+        query.exec_()
+
+        #loop through the results of the query and print them to the console 
+        while query.next():
+            headword = query.value(0)
+            english_word = query.value(1)
+            word_id = query.value(2)
+            # print(f"'{english_word}': {word_id}")
+            # self.ui.listWidget.addItem(headword)
+
+        if headword is not None:
+            print("yay!")
+            
+            query.prepare("INSERT INTO favourite (entry_id,Word) VALUES (:entry_id,:Word)")
+            query.bindValue(":entry_id", word_id)
+            query.bindValue(":Word", english_word)
+            query.exec_()
+            QMessageBox.information(self, "Word added", f"The word '{english_word}' has been added to the database.")
+
+        else:
+            print("no!")
+            QMessageBox.information(self, "Sorry :(", f"The word '{english_word}' doesn't have definition.")
+        
+
+
 
        
     def on_text_changed(self, text):

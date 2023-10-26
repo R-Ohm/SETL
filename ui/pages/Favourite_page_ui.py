@@ -14,15 +14,27 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(400, 300)
-        self.horizontalLayout = QtWidgets.QHBoxLayout(Form)
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout.setSpacing(0)
-        self.horizontalLayout.setObjectName("horizontalLayout")
+        Form.resize(502, 426)
+        self.verticalLayout = QtWidgets.QVBoxLayout(Form)
+        self.verticalLayout.setContentsMargins(25, 15, 25, 15)
+        self.verticalLayout.setSpacing(5)
+        self.verticalLayout.setObjectName("verticalLayout")
         self.label = QtWidgets.QLabel(Form)
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        font = QtGui.QFont()
+        font.setFamily("Poppins")
+        font.setPointSize(20)
+        self.label.setFont(font)
         self.label.setObjectName("label")
-        self.horizontalLayout.addWidget(self.label)
+        self.verticalLayout.addWidget(self.label)
+        self.listWidget = QtWidgets.QListWidget(Form)
+        self.listWidget.setStyleSheet("#listWidget { \n"
+"    padding: 20px;\n"
+"    background-color: rgb(255, 255, 255);\n"
+"    border: none;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.listWidget.setObjectName("listWidget")
+        self.verticalLayout.addWidget(self.listWidget)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)

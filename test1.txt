@@ -1,0 +1,25 @@
+************* Module SETL
+SETL.py:25:0: C0303: Trailing whitespace (trailing-whitespace)
+SETL.py:70:0: C0303: Trailing whitespace (trailing-whitespace)
+SETL.py:82:0: C0303: Trailing whitespace (trailing-whitespace)
+SETL.py:124:0: C0304: Final newline missing (missing-final-newline)
+SETL.py:115:0: R1707: Disallow trailing comma tuple (trailing-comma-tuple)
+SETL.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+SETL.py:1:0: C0103: Module name "SETL" doesn't conform to snake_case naming style (invalid-name)
+SETL.py:1:0: E0611: No name 'QApplication' in module 'PyQt5.QtWidgets' (no-name-in-module)
+SETL.py:1:0: E0611: No name 'QMainWindow' in module 'PyQt5.QtWidgets' (no-name-in-module)
+SETL.py:2:0: E0611: No name 'QFont' in module 'PyQt5.QtGui' (no-name-in-module)
+SETL.py:12:0: C0115: Missing class docstring (missing-class-docstring)
+SETL.py:12:0: C0103: Class name "root" doesn't conform to PascalCase naming style (invalid-name)
+SETL.py:22:8: C0103: Attribute name "Vocabulary_button" doesn't conform to snake_case naming style (invalid-name)
+SETL.py:23:8: C0103: Attribute name "History_button" doesn't conform to snake_case naming style (invalid-name)
+SETL.py:24:8: C0103: Attribute name "Favourite_button" doesn't conform to snake_case naming style (invalid-name)
+SETL.py:14:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)
+SETL.py:66:12: C0103: Variable name "curIndex" doesn't conform to snake_case naming style (invalid-name)
+SETL.py:77:22: C0201: Consider iterating the dictionary directly instead of calling .keys() (consider-iterating-dictionary)
+SETL.py:96:12: C0103: Variable name "curIndex" doesn't conform to snake_case naming style (invalid-name)
+SETL.py:111:12: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+
+------------------------------------------------------------------
+Your code has been rated at 4.84/10 (previous run: 4.19/10, +0.65)
+
