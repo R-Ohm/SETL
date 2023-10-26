@@ -1,0 +1,2 @@
+PS C:\Users\moski\Downloads\SETL> mypy SETL.py
+Success: no issues found in 1 source file
