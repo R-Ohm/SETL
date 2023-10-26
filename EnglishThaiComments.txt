@@ -25,3 +25,11 @@ You also need test cases for error situations.
 Memory, Cache etc are not things that can be tested in a functional test plan.
 
 Other than the test plan, it looks like you have not done any work at all on the app.
+
+
+2023-10-26: Looks like you updated your test plan but I do not see much improvement. It’s still not specific enough. Also you should replace the PDF with the xlsx source so it can be easily modified.
+
+I do not see any files from last week’s lab assignments. No output from static analysis program. No report on a code review.
+
+On the plus side, it looks like you are actively coding. BUT this competency is not just about code... it is about process!
+
