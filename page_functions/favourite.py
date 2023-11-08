@@ -23,12 +23,6 @@ class Favourite(QWidget):
         # Connect to the SQLite database
         self.db = QSqlDatabase.addDatabase("QSQLITE")
         db_name = "data.db"
-
-        # if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
-        #     bundle_dir = sys._MEIPASS
-        # else:
-        #     bundle_dir = os.path.dirname(os.path.abspath(__file__))
-        
         db_path = os.path.join(os.path.expanduser("~"), db_name)
         print(db_path)
         
@@ -48,6 +42,7 @@ class Favourite(QWidget):
             print("Database opened successfully")
 
         query = QSqlQuery()
+
         #Choose the vocab by filtering to show only one word vocab
         query.prepare("SELECT DISTINCT Favourite.Word FROM Favourite JOIN translation ON Favourite.Word = translation.body")
         query.exec_()
@@ -64,6 +59,7 @@ class Favourite(QWidget):
 
     def show_context_menu(self, pos):
         print("show_context_menu called")
+        
         # Create a context menu
         menu = QMenu(self.ui.listWidget)
 
@@ -97,5 +93,3 @@ class Favourite(QWidget):
             english_word = query.value(0)
             self.ui.listWidget.addItem(english_word)
         self.db.commit()
-
-        # QMessageBox.information(self, "Success", f"Deleted {num_entries_deleted} entries, {num_translations_deleted} translations")
