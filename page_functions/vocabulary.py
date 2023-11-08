@@ -24,13 +24,7 @@ class Modify_dialog(QDialog):
         else:
             item.setCheckState(Qt.Checked)
         
-    #     # Print the selection item in array
-    #     selected = []
-    #     for i in range(self.ui.listWidget.count()):
-    #         item = self.ui.listWidget.item(i)
-    #         if item.checkState() == Qt.Checked:
-    #             selected.append(item.text())
-    #     print(len(selected))
+    
 
 class Vocabulary(QWidget):
     def __init__(self):
@@ -40,7 +34,6 @@ class Vocabulary(QWidget):
 
         #Add search box
         self.ui.lineEdit.textChanged.connect(self.search)
-
         self.ui.listWidget.itemDoubleClicked.connect(self.show_dialog)
 
 
@@ -50,15 +43,8 @@ class Vocabulary(QWidget):
         # Connect to the SQLite database
         self.db = QSqlDatabase.addDatabase("QSQLITE")
         db_name = "data.db"
-
-        # if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
-        #     db_path = os.path.join(os.path.expanduser("~"), db_name)
-        # else:
-        #     bundle_dir = os.path.dirname(os.path.abspath(__file__))
         db_path = os.path.join(os.path.expanduser("~"), db_name)
         print(db_path)
-        
-        # db_path = os.path.join(bundle_dir, db_name)
         
         if not os.path.exists(db_path):
             print(f"Database file {db_path} does not exist")
@@ -98,7 +84,6 @@ class Vocabulary(QWidget):
     def show_dialog(self, item):
         dialog = Modify_dialog(self)
         dialog.ui.label.setText(item.text())
-        # dialog.ui.listWidget.clear()
         dialog.setStyleSheet("QDialog {background-color: #FFF9F1;} QDialog:title {color: white; font-size: 16px; font-weight: bold;}")
         query = QSqlQuery()
         query.prepare("SELECT entry.headword FROM translation JOIN entry ON translation.entry_id = entry._id WHERE translation.body = :word")
@@ -108,7 +93,6 @@ class Vocabulary(QWidget):
         while query.next():
             headword = query.value(0)
             dialog.ui.listWidget.addItem(headword)
-        # print(headword)
         
         #add checkbox for multiple choosing in listWidget
         for i in range(dialog.ui.listWidget.count()):
@@ -144,7 +128,6 @@ class Vocabulary(QWidget):
         thai_definition_edit = QLineEdit()
 
         #auto input English text after click button
-        # english_word_edit.setText(word)
         if isinstance(item.text(), str):
             english_word_edit.setText(item.text())
         else:
@@ -201,7 +184,6 @@ class Vocabulary(QWidget):
             query.prepare("INSERT INTO entry (headword) VALUES (:headword)")
             query.bindValue(":headword", thai_definition_edit.text())
             query.exec_()
-
             self.db.commit()
 
             # Get the ID of the last inserted row in the entry table
@@ -211,7 +193,6 @@ class Vocabulary(QWidget):
             query.bindValue(":body", english_word_edit.text())
             query.bindValue(":entry_id", entry_id)
             query.exec_()
-
             self.db.commit()
 
             print(f"English word: {english_word_edit.text()}")
@@ -227,8 +208,6 @@ class Vocabulary(QWidget):
             while query.next():
                 headword = query.value(0)
                 dialog.ui.listWidget.addItem(headword)
-                # print(headword)
-            # self.on_text_changed(self.ui.listWidget)
             
 
 
@@ -237,9 +216,6 @@ class Vocabulary(QWidget):
 
     
     def delete_word_from_selection(self, dialog, item):
-        # print("------------------")
-        # print(f"item = {item.text()}")
-        # print("delete")
         # Create a QSqlQuery object to execute SQL queries on the database
         query = QSqlQuery()
 
@@ -249,7 +225,6 @@ class Vocabulary(QWidget):
             item_selected = dialog.ui.listWidget.item(i)
             if item_selected.checkState() == Qt.Checked:
                 selected.append(item_selected.text())
-        # print(len(selected))
 
         # Delete the word from the database
         for i in range(len(selected)):
@@ -265,18 +240,17 @@ class Vocabulary(QWidget):
                 query.bindValue(":id", entry_id)
                 query.exec_()
                 self.db.commit()
-
                 query.prepare("DELETE FROM translation WHERE entry_id = :id")
                 query.bindValue(":id", entry_id)
                 query.exec_()
                 self.db.commit()
-                # print(f"Deleted {entry_id}")
+                
             else:
                 print(f"Entry not found for {selected[i]}")
 
         dialog.ui.listWidget.clear()
         print("clear")
-        # print(f"item = {item.text()}")
+       
         query.prepare("SELECT entry.headword FROM translation JOIN entry ON translation.entry_id = entry._id WHERE translation.body = :word")
         query.bindValue(":word", f"{item.text()}")
         query.exec_()
@@ -284,12 +258,11 @@ class Vocabulary(QWidget):
         # Clear the selected list and repopulate the listWidget
         while query.next():
             headword = query.value(0)
-            # print(headword)
             dialog.ui.listWidget.addItem(headword)
         
         item_selected = None
         selected = []
-        # print(f"item2 = {item.text()}")
+        
 
     def reconnect_Eng_data(self, item):
         query = QSqlQuery()
@@ -298,7 +271,6 @@ class Vocabulary(QWidget):
         self.ui.listWidget.clear()
         while query.next():
             english_word = query.value(0)
-            # print(english_word)
             self.ui.listWidget.addItem(english_word)
 
     def add_word_to_favourites(self, dialog, item):
@@ -309,6 +281,7 @@ class Vocabulary(QWidget):
         english_word = None
         word_id = None
         temp = None
+        
         #execute a SQL query to retrieve data from the database
         query.prepare("SELECT entry.headword, translation.body, translation.entry_id FROM translation JOIN entry ON translation.entry_id = entry._id WHERE translation.body = :word")
         query.bindValue(":word", f"{item.text()}")
