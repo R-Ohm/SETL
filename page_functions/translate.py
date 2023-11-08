@@ -6,6 +6,8 @@ from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QHBoxLayout, QAbstractItemView, QMenu, QAction
 from PyQt5.QtGui import QClipboard, QGuiApplication
 import sqlite3
+import os
+import sys
 
 
 class Translate(QWidget):
@@ -18,15 +20,6 @@ class Translate(QWidget):
         self.ui.listWidget.setSelectionMode(QAbstractItemView.NoSelection)
         self.ui.pushButton.clicked.connect(self.add_word_to_favourites)
         self.ui.pushButton_3.clicked.connect(self.add_word_to_database_window)
-
-        # Connect to the SQLite database
-        db = QSqlDatabase.addDatabase("QSQLITE")
-        db.setDatabaseName("test.sqlite")
-        if not db.open():
-            print("Failed to connect to database")
-            return
-        else:
-            print("Connected to database")
             
         # Connect the textChanged signal of the QLineEdit to the on_text_changed slot
         self.ui.lineEdit.textChanged.connect(self.on_text_changed)
@@ -37,6 +30,37 @@ class Translate(QWidget):
         # Create a context menu for the QListWidget
         self.ui.listWidget.setContextMenuPolicy(Qt.CustomContextMenu)
         self.ui.listWidget.customContextMenuRequested.connect(self.show_context_menu)
+    
+    def showEvent(self, event):
+        self.ui.listWidget.clear()
+        # Connect to the SQLite database
+        # Connect to the SQLite database
+        self.db = QSqlDatabase.addDatabase("QSQLITE")
+        db_name = "data.db"
+        db_path = os.path.join(sys._MEIPASS, db_name)
+        # else:
+        #     bundle_dir = os.path.dirname(os.path.abspath(__file__))
+        db_path = os.path.join(os.path.expanduser("~"), db_name)
+        print(db_path)
+        
+        # db_path = os.path.join(bundle_dir, db_name)
+        
+        if not os.path.exists(db_path):
+            print(f"Database file {db_path} does not exist")
+            return
+        else:
+            print("Connected to database")
+        
+        self.db.setDatabaseName(db_path)
+
+        # Open the database connection
+        if not self.db.open():
+            print("Failed to open database")
+            return
+        else:
+            print("Database opened successfully")
+    
+        print("Reconnected to database successfully")
 
     def show_context_menu(self, pos):
         print("show_context_menu called")
@@ -81,14 +105,17 @@ class Translate(QWidget):
         if not query.exec_():
             print("Error deleting entry:", query.lastError().text())
             return
-        # num_entries_deleted = query.numRowsAffected()
+        num_entries_deleted = query.numRowsAffected()
+        self.db.commit()
 
         query.prepare("DELETE FROM translation WHERE entry_id=:id")
         query.bindValue(":id", entry_id)
         if not query.exec_():
             print("Error deleting translation:", query.lastError().text())
             return
-        # num_translations_deleted = query.numRowsAffected()
+        # self.ui.listWidget.clear()
+        num_translations_deleted = query.numRowsAffected()
+        self.db.commit()
 
         # QMessageBox.information(self, "Success", f"Deleted {num_entries_deleted} entries, {num_translations_deleted} translations")
     
@@ -173,6 +200,7 @@ class Translate(QWidget):
             query.prepare("INSERT INTO entry (headword) VALUES (:headword)")
             query.bindValue(":headword", thai_definition_edit.text())
             query.exec_()
+            self.db.commit()
 
             # Get the ID of the last inserted row in the entry table
             entry_id = query.lastInsertId()
@@ -181,13 +209,17 @@ class Translate(QWidget):
             query.bindValue(":body", english_word_edit.text())
             query.bindValue(":entry_id", entry_id)
             query.exec_()
+            self.db.commit()
 
             print(f"English word: {english_word_edit.text()}")
             print(f"Thai definition: {thai_definition_edit.text()}")
             print(f"id: {entry_id}")
+            self.db.commit()
 
             QMessageBox.information(dialog, "Word added", f"The word '{english_word_edit.text()}' has been added to the database.")
-            self.on_text_changed(self.ui.listWidget)
+            # self.on_text_changed(self.ui.listWidget)
+            self.ui.listWidget.clear()
+            self.db.commit()
 
         # Close the dialog
         dialog.accept()
@@ -204,6 +236,7 @@ class Translate(QWidget):
             return
 
         headword = None
+        temp = None
 
         #create a SqlQuery to excute the database
         query = QSqlQuery()
@@ -220,6 +253,18 @@ class Translate(QWidget):
             word_id = query.value(2)
             # print(f"'{english_word}': {word_id}")
             # self.ui.listWidget.addItem(headword)
+        
+        query.prepare("SELECT Word FROM favourite WHERE Word = :word")
+        query.bindValue(":word", english_word)
+        query.exec_()
+
+        while query.next():
+            temp = query.value(0)
+        
+        if temp == english_word:
+            print("You have already added this word to your favourite list")
+            QMessageBox.information(self, "Sorry :(", f"You have already added '{english_word}' to your favourite list.")
+            return
 
         if headword is not None:
             print("yay!")
@@ -228,15 +273,13 @@ class Translate(QWidget):
             query.bindValue(":entry_id", word_id)
             query.bindValue(":Word", english_word)
             query.exec_()
+            self.db.commit()
             QMessageBox.information(self, "Word added", f"The word '{english_word}' has been added to the database.")
 
         else:
             print("no!")
             QMessageBox.information(self, "Sorry :(", f"The word '{english_word}' doesn't have definition.")
         
-
-
-
        
     def on_text_changed(self, text):
 
@@ -267,6 +310,11 @@ class Translate(QWidget):
 
         if headword is not None:
             print(f"Definition of '{text}': {headword}")
+            query.prepare("INSERT INTO history (Word) VALUES (:Word)")
+            query.bindValue(":Word", text)
+            query.exec_()
+            
+
         else:
             print(f"No definition found for '{text}'")
             item = QListWidgetItem(f"No definition found")
