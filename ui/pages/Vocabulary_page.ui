@@ -83,6 +83,12 @@
           <height>30</height>
          </size>
         </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;search...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Search...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="styleSheet">
          <string notr="true">#lineEdit { 
 	background-color: rgb(255, 255, 255);
@@ -102,6 +108,7 @@
 	background-color: rgb(255, 255, 255);
 	border: none;
 	border-radius: 20px;
+	font-size: 12px;
 }</string>
      </property>
     </widget>

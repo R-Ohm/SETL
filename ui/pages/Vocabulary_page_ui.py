@@ -45,6 +45,7 @@ class Ui_Form(object):
 "    background-color: rgb(255, 255, 255);\n"
 "    border: none;\n"
 "}")
+        self.lineEdit.setPlaceholderText("Search...") 
         self.lineEdit.setObjectName("lineEdit")
         self.horizontalLayout.addWidget(self.lineEdit)
         self.verticalLayout.addWidget(self.widget)
@@ -55,6 +56,10 @@ class Ui_Form(object):
 "    border: none;\n"
 "    border-radius: 20px;\n"
 "}")
+        font = QtGui.QFont()
+        font.setFamily("Poppins")
+        font.setPointSize(15)
+        self.listWidget.setFont(font)
         self.listWidget.setObjectName("listWidget")
         self.verticalLayout.addWidget(self.listWidget)
 
