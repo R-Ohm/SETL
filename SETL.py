@@ -7,7 +7,10 @@ from page_functions.translate import Translate
 from page_functions.vocabulary import Vocabulary
 from page_functions.history import History
 from page_functions.favourite import Favourite
-
+from PyQt5.QtSql import QSqlDatabase, QSqlQuery
+import sqlite3
+import os
+import shutil
 
 class root(QMainWindow):
     def __init__(self):
@@ -49,6 +52,32 @@ class root(QMainWindow):
         self.Vocabulary_button.clicked.connect(self.show_selected_window)
         self.History_button.clicked.connect(self.show_selected_window)
         self.Favourite_button.clicked.connect(self.show_selected_window)
+
+        self.db = QSqlDatabase.addDatabase("QSQLITE")
+        db_name = "data.db"
+
+        if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+            db_path = os.path.join(sys._MEIPASS, db_name)
+            # Copy the .db file to the user's home directory
+            destination_path = os.path.join(os.path.expanduser("~"), db_name)
+            if not os.path.exists(destination_path):
+                shutil.copy2(db_path, os.path.expanduser("~"))
+                print(f"Copied {db_path} to {destination_path}")
+            else:
+                print(f"Database file {destination_path} already exists")
+        else:
+            db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), db_name)
+
+        # Your existing code here...
+
+        self.db.setDatabaseName(db_path)
+
+        # Open the database connection
+        if not self.db.open():
+            print("Failed to open database")
+            return
+        else:
+            print("Database opened successfully")
 
 
     def show_home_window(self):
