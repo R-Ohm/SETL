@@ -33,3 +33,8 @@ I do not see any files from last week’s lab assignments. No output from static
 
 On the plus side, it looks like you are actively coding. BUT this competency is not just about code... it is about process!
 
+2023-11-02: I do not see any deployment plan. 
+
+I do see that you’ve add static analysis files. But the second file still has many errors! The goal was to use the PyLint output to remove problems. 
+
+Code review report would be better if more specific, with more “quotes” from the source files.
