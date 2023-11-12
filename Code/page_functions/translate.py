@@ -1,3 +1,17 @@
+"""
+
+translate.py
+This file contains the functions for the Translate page.
+- Show the definitions in the list widget
+- Add the definitions to the database
+- Add the definitions to the favourites list
+- Copy the definitions to the clipboard
+- Delete the definitions from the list widget
+
+In the English Word box if user wants to refresh the box they can press enter
+
+"""
+
 from PyQt5.QtWidgets import QWidget, QLineEdit, QListWidget, QListWidgetItem, QPushButton, QDialog, QLabel, QDialogButtonBox, QMessageBox
 from PyQt5.QtSql import QSqlDatabase, QSqlQuery
 from ui.pages.Translator_page_ui import Ui_Form
@@ -251,6 +265,7 @@ class Translate(QWidget):
             headword = query.value(0)
             english_word = query.value(1)
             word_id = query.value(2)
+            # debug
             # print(f"'{english_word}': {word_id}")
             # self.ui.listWidget.addItem(headword)
         
@@ -350,5 +365,5 @@ class Translate(QWidget):
             self.ui.listWidget.addItem(add_data_btn)
             self.ui.listWidget.setItemWidget(add_data_btn, button)
 
-
+        #debug
         # print(f"Definition of '{text}': {headword}")

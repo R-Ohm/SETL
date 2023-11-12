@@ -1,3 +1,12 @@
+"""
+
+history.py
+This file contains the functions for the History page.
+- Show the history words in the list widget
+- Delete the history words from the list widget
+
+"""
+
 from PyQt5.QtWidgets import QWidget, QLineEdit, QListWidget, QListWidgetItem, QPushButton, QDialog, QLabel, QDialogButtonBox, QMessageBox
 from ui.pages.History_page_ui import Ui_Form
 from PyQt5.QtGui import QFont
@@ -20,14 +29,10 @@ class History(QWidget):
     def showEvent(self, event):
         english_word = None
         self.ui.listWidget.clear()
+
         # Connect to the SQLite database
         self.db = QSqlDatabase.addDatabase("QSQLITE")
         db_name = "data.db"
-
-        # if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
-        #     bundle_dir = sys._MEIPASS
-        # else:
-        #     bundle_dir = os.path.dirname(os.path.abspath(__file__))
         
         db_path = os.path.join(os.path.expanduser("~"), db_name)
         print(db_path)
@@ -48,6 +53,7 @@ class History(QWidget):
             print("Database opened successfully")
 
         query = QSqlQuery()
+
         #Choose the vocab by filtering to show only one word vocab
         query.prepare("SELECT DISTINCT Word from History")
         query.exec_()
@@ -60,6 +66,7 @@ class History(QWidget):
 
     def show_context_menu(self, pos):
         print("show_context_menu called")
+
         # Create a context menu
         menu = QMenu(self.ui.listWidget)
 
@@ -93,5 +100,3 @@ class History(QWidget):
             english_word = query.value(0)
             self.ui.listWidget.addItem(english_word)
         self.db.commit()
-
-        # QMessageBox.information(self, "Success", f"Deleted {num_entries_deleted} entries, {num_translations_deleted} translations")

@@ -1,3 +1,12 @@
+"""
+
+Favourite.py
+This file contains the functions for the Favourite page.
+- Show the favourite words in the list widget
+- Delete the favourite words from the list widget
+
+"""
+
 from PyQt5.QtWidgets import QWidget, QLineEdit, QListWidget, QListWidgetItem, QPushButton, QDialog, QLabel, QDialogButtonBox, QMessageBox
 from ui.pages.Favourite_page_ui import Ui_Form
 from PyQt5.QtGui import QFont
@@ -20,6 +29,7 @@ class Favourite(QWidget):
     def showEvent(self, event):
         english_word = None
         self.ui.listWidget.clear()
+        
         # Connect to the SQLite database
         self.db = QSqlDatabase.addDatabase("QSQLITE")
         db_name = "data.db"

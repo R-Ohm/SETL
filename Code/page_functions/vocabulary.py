@@ -1,3 +1,15 @@
+"""
+
+Vocabulary.py
+This file contains the functions for the Vocabulary page.
+- Show the vocabulary words in the list widget
+- Show a new window to show the Thai definition of the English word
+- Add the English word to the database
+- Delete the English word from the database
+- Add the English word to the favourite list
+
+"""
+
 from PyQt5.QtWidgets import QWidget, QLineEdit, QListWidget, QListWidgetItem, QPushButton, QDialog, QLabel, QDialogButtonBox, QMessageBox
 from ui.pages.Vocabulary_page_ui import Ui_Form
 from ui.pages.Modify_dialog_ui import Ui_Dialog
