@@ -1,16 +1,12 @@
 <div align="center">
 <h1 align="center">
 <img src="https://raw.githubusercontent.com/SFocusP/SETL/main/Documents/README_assets/IMG_2569.JPG" />
-<!-- <br>SETL</h1> -->
-<!-- <h3>◦ HTTPStatus Exception: 401</h3> -->
-<h3>Download Click at the OS icon</h3>
-
+<h3>Download: Click at the OS icon</h3>
+<p>Read the instruction below (Installation) <p>
 <p align="center">
-<a href="https://drive.google.com/file/d/1K67zHpMtZsWzKJ2LoDhjHtXCwGASfJzK/view?usp=sharing"><img src="https://i.redd.it/ne6ukkej06t71.png" alt="Download" width="40" /></a>&nbsp;
-<a href="https://drive.google.com/file/d/1K67zHpMtZsWzKJ2LoDhjHtXCwGASfJzK/view?usp=sharing"><img src="https://cdn-icons-png.flaticon.com/512/518/518713.png" alt="Download" width="40" /></a>&nbsp;
+<a href="https://drive.google.com/drive/folders/1mrIcbE6MYsAbPZFbFxODvrPo-cl_Zht1?usp=sharing"><img src="https://i.redd.it/ne6ukkej06t71.png" alt="Download" width="40" /></a>&nbsp;
+<a href="https://drive.google.com/drive/folders/18d0NswsU-HDutH40UV8FdsYHxmsw4cvR?usp=sharing"><img src="https://cdn-icons-png.flaticon.com/512/518/518713.png" alt="Download" width="40" /></a>&nbsp;
 </div>
-
----
 
 ## 📖 Table of Contents
 - [📖 Table of Contents](#-table-of-contents)
@@ -29,13 +25,6 @@
 
 ---
 
-<!-- ## 📦 Features
-
-HTTPStatus Exception: 401
-
---- -->
-
-
 ## 📂 Repository Structure
 
 ```sh
@@ -51,19 +40,31 @@ HTTPStatus Exception: 401
 
 ## 🚀 Getting Started
 
-### 🔧 Installation
+### 🔧 For Windows
 
-1. Download the application file by clicking at the Operating System icon on the top of the page
+1. Download the application 
+[🖥️ Here](https://drive.google.com/drive/folders/1mrIcbE6MYsAbPZFbFxODvrPo-cl_Zht1?usp=sharing) (with console/ without console version)
 
 2. Double click on the program
 
+### 🧪 For Linux
+
+1. Download the application
+[🖥️ Here](https://drive.google.com/drive/folders/18d0NswsU-HDutH40UV8FdsYHxmsw4cvR?usp=sharing)
+
+2. Extract the ZIP file
+3. Right-Click and open terminal and run ```./SETL``` in the command line
+
+** If you got an error about ```qt.qpa.plugin``` please run ```sudo apt-get install libxcb-xinerama0```
+
+📄 Note that the database file will appear in HOME (User) directory
 ```
 🤖 Enjoy with our application :)
 ```
 
 ---
 
-## 🤝 Contributors
+## 🤝 Our Teams
 
    😊 Minnie (Minniesse)
 
