@@ -29,8 +29,6 @@
 
 ```sh
 └── SETL/
-    ├── Data/
-    │   ├── English to Thai Data to sqlite format
     ├── Documents/
     │   ├── Process of this project
     ├── Code/
