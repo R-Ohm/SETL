@@ -27,6 +27,10 @@ class Ui_Form(object):
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
         self.listWidget = QtWidgets.QListWidget(Form)
+        font = QtGui.QFont()
+        font.setFamily("Poppins")
+        font.setPointSize(15)
+        self.listWidget.setFont(font)
         self.listWidget.setStyleSheet("#listWidget { \n"
 "    padding: 20px;\n"
 "    background-color: rgb(255, 255, 255);\n"
