@@ -3,7 +3,7 @@
 <img src="https://raw.githubusercontent.com/SFocusP/SETL/main/Documents/README_assets/IMG_2569.JPG" />
 <!-- <br>SETL</h1> -->
 <!-- <h3>◦ HTTPStatus Exception: 401</h3> -->
-<h3>Download Click at the OS icon</h3>
+<h3>Click at the OS icon to download the program</h3>
 
 <p align="center">
 <a href="https://drive.google.com/file/d/1K67zHpMtZsWzKJ2LoDhjHtXCwGASfJzK/view?usp=sharing"><img src="https://i.redd.it/ne6ukkej06t71.png" alt="Download" width="40" /></a>&nbsp;
